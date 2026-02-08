@@ -537,29 +537,29 @@
 
         const fixtures = [
             // Round 1
-            { id: 1, round: 1, home: "Zamorin FC", away: "Vitoria", homeScore: null, awayScore: null, status: "Upcoming", date: "10-02-2026" },
-            { id: 2, round: 1, home: "FC Dollers", away: "Khalifs FC", homeScore: null, awayScore: null, status: "Upcoming", date: "10-02-2026" },
-            { id: 3, round: 1, home: "FC Hooligans", away: "Zah Shooters FC", homeScore: null, awayScore: null, status: "Upcoming", date: "10-02-2026" },
+            { id: 1, round: 1, home: "Zamorin FC", away: "Vitoria", homeScore: null, awayScore: null, status: "Upcoming", time: "22:00" },
+            { id: 2, round: 1, home: "FC Hooligans", away: "Khalifs FC", homeScore: null, awayScore: null, status: "Upcoming", time: "22:15" },
+            { id: 3, round: 1, home: "FC Dollers", away: "Zah Shooters FC", homeScore: null, awayScore: null, status: "Upcoming", time: "22:30" },
 
             // Round 2
-            { id: 4, round: 2, home: "FC Hooligans", away: "FC Dollers", homeScore: null, awayScore: null, status: "Upcoming", date: "17-02-2026" },
-            { id: 5, round: 2, home: "Zah Shooters FC", away: "Zamorin FC", homeScore: null, awayScore: null, status: "Upcoming", date: "17-02-2026" },
-            { id: 6, round: 2, home: "Khalifs FC", away: "Vitoria", homeScore: null, awayScore: null, status: "Upcoming", date: "17-02-2026" },
+            { id: 4, round: 2, home: "Vitoria", away: "FC Hooligans", homeScore: null, awayScore: null, status: "Upcoming", time: "22:45" },
+            { id: 5, round: 2, home: "Zah Shooters FC", away: "Zamorin FC", homeScore: null, awayScore: null, status: "Upcoming", time: "23:00" },
+            { id: 6, round: 2, home: "Khalifs FC", away: "FC Dollers", homeScore: null, awayScore: null, status: "Upcoming", time: "23:15" },
 
             // Round 3
-            { id: 7, round: 3, home: "Khalifs FC", away: "FC Hooligans", homeScore: null, awayScore: null, status: "Upcoming", date: "24-02-2026" },
-            { id: 8, round: 3, home: "FC Dollers", away: "Vitoria", homeScore: null, awayScore: null, status: "Upcoming", date: "24-02-2026" },
-            { id: 9, round: 3, home: "Zamorin FC", away: "Zah Shooters FC", homeScore: null, awayScore: null, status: "Upcoming", date: "24-02-2026" },
+            { id: 7, round: 3, home: "Vitoria", away: "Zah Shooters FC", homeScore: null, awayScore: null, status: "Upcoming", time: "23:30" },
+            { id: 8, round: 3, home: "FC Hooligans", away: "FC Dollers", homeScore: null, awayScore: null, status: "Upcoming", time: "23:45" },
+            { id: 9, round: 3, home: "Khalifs FC", away: "Zamorin FC", homeScore: null, awayScore: null, status: "Upcoming", time: "00:00" },
 
             // Round 4
-            { id: 10, round: 4, home: "Vitoria", away: "FC Hooligans", homeScore: null, awayScore: null, status: "Upcoming", date: "03-03-2026" },
-            { id: 11, round: 4, home: "Zah Shooters FC", away: "Khalifs FC", homeScore: null, awayScore: null, status: "Upcoming", date: "03-03-2026" },
-            { id: 12, round: 4, home: "FC Dollers", away: "Zamorin FC", homeScore: null, awayScore: null, status: "Upcoming", date: "03-03-2026" },
+            { id: 10, round: 4, home: "Zah Shooters FC", away: "FC Hooligans", homeScore: null, awayScore: null, status: "Upcoming", time: "00:15" },
+            { id: 11, round: 4, home: "Khalifs FC", away: "Vitoria", homeScore: null, awayScore: null, status: "Upcoming", time: "00:30" },
+            { id: 12, round: 4, home: "FC Dollers", away: "Zamorin FC", homeScore: null, awayScore: null, status: "Upcoming", time: "00:45" },
 
             // Round 5
-            { id: 13, round: 5, home: "FC Hooligans", away: "Zamorin FC", homeScore: null, awayScore: null, status: "Upcoming", date: "10-03-2026" },
-            { id: 14, round: 5, home: "Vitoria", away: "Zah Shooters FC", homeScore: null, awayScore: null, status: "Upcoming", date: "10-03-2026" },
-            { id: 15, round: 5, home: "Khalifs FC", away: "FC Dollers", homeScore: null, awayScore: null, status: "Upcoming", date: "10-03-2026" }
+            { id: 13, round: 5, home: "Zah Shooters FC", away: "Khalifs FC", homeScore: null, awayScore: null, status: "Upcoming", time: "01:00" },
+            { id: 14, round: 5, home: "FC Hooligans", away: "Zamorin FC", homeScore: null, awayScore: null, status: "Upcoming", time: "01:15" },
+            { id: 15, round: 5, home: "FC Dollers", away: "Vitoria", homeScore: null, awayScore: null, status: "Upcoming", time: "01:30" }
         ];
 
         const players = [
@@ -655,7 +655,7 @@
                 const awayTeam = teams.find(t => t.name === match.away);
                 return `
                 <div class="match-card">
-                    <div class="match-date">${match.date} <span class="match-status upcoming">${match.status}</span></div>
+                    <div class="match-date">${match.time} <span class="match-status upcoming">${match.status}</span></div>
                     <div class="match-teams">
                         <div class="team-home">
                             <img src="${homeTeam ? homeTeam.logo : 'logo.jpg'}" class="team-logo-medium">
@@ -677,7 +677,7 @@
                 const awayTeam = teams.find(t => t.name === match.away);
                 return `
                 <div class="match-card">
-                    <div class="match-date">${match.date} <span class="match-status finished">${match.status}</span></div>
+                    <div class="match-date">${match.time} <span class="match-status finished">${match.status}</span></div>
                     <div class="match-teams">
                         <div class="team-home">
                             <img src="${homeTeam ? homeTeam.logo : 'logo.jpg'}" class="team-logo-medium">
