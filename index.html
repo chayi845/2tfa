@@ -732,15 +732,19 @@
         const teams = [
             { name: "FC Dollers", logo: "logo_fcdollers.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
             { name: "FC Hooligans", logo: "logo_fchooligans.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
-            { name: "Zamorin FC", logo: "logo_zamorinfc.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
-            { name: "Vitoria", logo: "logo_vitoria.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
+            { name: "Zamorin FC", logo: "logo_zamorinfc.jpeg", played: 1, won: 1, drawn: 0, lost: 0, gf: 3, ga: 1 },
+            { name: "Vitoria", logo: "logo_vitoria.jpeg", played: 1, won: 0, drawn: 0, lost: 1, gf: 1, ga: 3 },
             { name: "Zah Shooters FC", logo: "logo_zahshooters.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
             { name: "Khalifs FC", logo: "logo_khalifs.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 }
         ];
 
         const fixtures = [
             // Round 1
-            { id: 1, round: 1, home: "Zamorin FC", away: "Vitoria", homeScore: null, awayScore: null, status: "Upcoming", time: "22:00" },
+            {
+                id: 1, round: 1, home: "Zamorin FC", away: "Vitoria", homeScore: 3, awayScore: 1, status: "Finished", time: "22:00",
+                homeScorers: ["Mubashir (Sinan)", "Riyan (Sinan)", "Sinan"],
+                awayScorers: ["Sabith"]
+            },
             { id: 2, round: 1, home: "FC Hooligans", away: "Khalifs FC", homeScore: null, awayScore: null, status: "Upcoming", time: "22:15" },
             { id: 3, round: 1, home: "FC Dollers", away: "Zah Shooters FC", homeScore: null, awayScore: null, status: "Upcoming", time: "22:30" },
 
@@ -783,20 +787,20 @@
             { name: "Abdu (GK)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "logo_fchooligans.jpeg" },
 
             // Zamorin FC
-            { name: "Mubashir (C)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "mubashir.jpeg" },
-            { name: "Sinan (Icon)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "sinan.jpeg" },
-            { name: "Ak", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "AK.jpeg" },
-            { name: "Ruwais", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "ruwais.jpeg" },
-            { name: "Riyan", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "riyan.jpeg" },
-            { name: "Waseem (GK)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Waseem.jpeg" },
+            { name: "Mubashir (C)", team: "Zamorin FC", goals: 1, assists: 0, yellow: 0, red: 0, matches: 1, img: "mubashir.jpeg" },
+            { name: "Sinan (Icon)", team: "Zamorin FC", goals: 1, assists: 2, yellow: 0, red: 0, matches: 1, img: "sinan.jpeg" },
+            { name: "Ak", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "AK.jpeg" },
+            { name: "Ruwais", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "ruwais.jpeg" },
+            { name: "Riyan", team: "Zamorin FC", goals: 1, assists: 0, yellow: 0, red: 0, matches: 1, img: "riyan.jpeg" },
+            { name: "Waseem (GK)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Waseem.jpeg" },
 
             // Vitoria
-            { name: "Muhammed (C)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Muhammed.jpg" },
-            { name: "Sabith (Icon)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Sabith.jpg" },
-            { name: "Hamdullah", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "hamdullah.jpg" },
-            { name: "Nasif", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "nasif.jpg" },
-            { name: "Munazir", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Munazir.jpg" },
-            { name: "Adil (GK)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Adil.jpg" },
+            { name: "Muhammed (C)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Muhammed.jpg" },
+            { name: "Sabith (Icon)", team: "Vitoria", goals: 1, assists: 0, yellow: 0, red: 0, matches: 1, img: "Sabith.jpg" },
+            { name: "Hamdullah", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "hamdullah.jpg" },
+            { name: "Nasif", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "nasif.jpg" },
+            { name: "Munazir", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Munazir.jpg" },
+            { name: "Adil (GK)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Adil.jpg" },
 
             // Zah Shooters FC
             { name: "Manal (C)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Manal.jpg" },
@@ -878,6 +882,18 @@
             const resultsHtml = fixtures.filter(m => m.status === "Finished").map(match => {
                 const homeTeam = teams.find(t => t.name === match.home);
                 const awayTeam = teams.find(t => t.name === match.away);
+
+                // Generate goal scorers HTML
+                const homeScorersHtml = match.homeScorers ?
+                    `<div style="font-size: 0.85em; color: #666; margin-top: 8px;">
+                        ${match.homeScorers.map(scorer => `⚽ ${scorer}`).join('<br>')}
+                    </div>` : '';
+
+                const awayScorersHtml = match.awayScorers ?
+                    `<div style="font-size: 0.85em; color: #666; margin-top: 8px;">
+                        ${match.awayScorers.map(scorer => `⚽ ${scorer}`).join('<br>')}
+                    </div>` : '';
+
                 return `
                 <div class="match-card">
                     <div class="match-date">${match.time} <span class="match-status finished">${match.status}</span></div>
@@ -885,11 +901,13 @@
                         <div class="team-home">
                             <img src="${homeTeam ? homeTeam.logo : 'logo.jpg'}" class="team-logo-medium">
                             <div>${match.home}</div>
+                            ${homeScorersHtml}
                         </div>
                         <div class="match-score-container"><span class="score">${match.homeScore} - ${match.awayScore}</span></div>
                         <div class="team-away">
                             <img src="${awayTeam ? awayTeam.logo : 'logo.jpg'}" class="team-logo-medium">
                             <div>${match.away}</div>
+                            ${awayScorersHtml}
                         </div>
                     </div>
                 </div>
