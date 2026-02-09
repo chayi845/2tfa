@@ -732,8 +732,8 @@
         const teams = [
             { name: "FC Dollers", logo: "logo_fcdollers.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
             { name: "FC Hooligans", logo: "logo_fchooligans.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
-            { name: "Zamorin FC", logo: "logo_zamorinfc.jpeg", played: 1, won: 1, drawn: 0, lost: 0, gf: 3, ga: 1 },
-            { name: "Vitoria", logo: "logo_vitoria.jpeg", played: 1, won: 0, drawn: 0, lost: 1, gf: 1, ga: 3 },
+            { name: "Zamorin FC", logo: "logo_zamorinfc.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
+            { name: "Vitoria", logo: "logo_vitoria.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
             { name: "Zah Shooters FC", logo: "logo_zahshooters.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
             { name: "Khalifs FC", logo: "logo_khalifs.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 }
         ];
@@ -742,10 +742,13 @@
             // Round 1
             {
                 id: 1, round: 1, home: "Zamorin FC", away: "Vitoria", homeScore: 3, awayScore: 1, status: "Finished", time: "22:00",
-                homeScorers: ["Mubashir (Sinan)", "Riyan (Sinan)", "Sinan"],
+                homeScorers: ["Mubashir (Sinan)", "Riyan (Sinan)", "Sinan (ak)"],
                 awayScorers: ["Sabith"]
             },
-            { id: 2, round: 1, home: "FC Hooligans", away: "Khalifs FC", homeScore: null, awayScore: null, status: "Upcoming", time: "22:15" },
+            {
+                id: 2, round: 1, home: "FC Hooligans", away: "Khalifs FC", homeScore: 0, awayScore: 1, status: "Finished", time: "22:15",
+                awayScorers: ["Dawood"]
+            },
             { id: 3, round: 1, home: "FC Dollers", away: "Zah Shooters FC", homeScore: null, awayScore: null, status: "Upcoming", time: "22:30" },
 
             // Round 2
@@ -787,20 +790,20 @@
             { name: "Abdu (GK)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "logo_fchooligans.jpeg" },
 
             // Zamorin FC
-            { name: "Mubashir (C)", team: "Zamorin FC", goals: 1, assists: 0, yellow: 0, red: 0, matches: 1, img: "mubashir.jpeg" },
-            { name: "Sinan (Icon)", team: "Zamorin FC", goals: 1, assists: 2, yellow: 0, red: 0, matches: 1, img: "sinan.jpeg" },
-            { name: "Ak", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "AK.jpeg" },
-            { name: "Ruwais", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "ruwais.jpeg" },
-            { name: "Riyan", team: "Zamorin FC", goals: 1, assists: 0, yellow: 0, red: 0, matches: 1, img: "riyan.jpeg" },
-            { name: "Waseem (GK)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Waseem.jpeg" },
+            { name: "Mubashir (C)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "mubashir.jpeg" },
+            { name: "Sinan (Icon)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "sinan.jpeg" },
+            { name: "Ak", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "AK.jpeg" },
+            { name: "Ruwais", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "ruwais.jpeg" },
+            { name: "Riyan", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "riyan.jpeg" },
+            { name: "Waseem (GK)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Waseem.jpeg" },
 
             // Vitoria
-            { name: "Muhammed (C)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Muhammed.jpg" },
-            { name: "Sabith (Icon)", team: "Vitoria", goals: 1, assists: 0, yellow: 0, red: 0, matches: 1, img: "Sabith.jpg" },
-            { name: "Hamdullah", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "hamdullah.jpg" },
-            { name: "Nasif", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "nasif.jpg" },
-            { name: "Munazir", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Munazir.jpg" },
-            { name: "Adil (GK)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Adil.jpg" },
+            { name: "Muhammed (C)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Muhammed.jpg" },
+            { name: "Sabith (Icon)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Sabith.jpg" },
+            { name: "Hamdullah", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "hamdullah.jpg" },
+            { name: "Nasif", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "nasif.jpg" },
+            { name: "Munazir", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Munazir.jpg" },
+            { name: "Adil (GK)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Adil.jpg" },
 
             // Zah Shooters FC
             { name: "Manal (C)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Manal.jpg" },
@@ -1074,7 +1077,133 @@
             if (grid) grid.innerHTML = gridHtml;
         }
 
+        // Auto-update player statistics from fixture results
+        function autoUpdatePlayerStats() {
+            // Reset all player stats to 0
+            players.forEach(p => {
+                p.goals = 0;
+                p.assists = 0;
+                p.matches = 0;
+            });
+
+            // Track which players have played in each match
+            const playersInMatches = new Set();
+
+            // Process all finished matches
+            fixtures.filter(f => f.status === "Finished").forEach(match => {
+                // Process home team scorers
+                if (match.homeScorers) {
+                    match.homeScorers.forEach(scorerStr => {
+                        // Parse "PlayerName" or "PlayerName (AssistProvider)"
+                        const match_result = scorerStr.match(/^([^(]+?)(?:\s*\(([^)]+)\))?$/);
+                        if (match_result) {
+                            const scorerName = match_result[1].trim();
+                            const assisterName = match_result[2] ? match_result[2].trim() : null;
+
+                            // Find and update scorer
+                            const scorer = players.find(p =>
+                                p.name.toLowerCase().includes(scorerName.toLowerCase()) &&
+                                p.team === match.home
+                            );
+                            if (scorer) {
+                                scorer.goals++;
+                                playersInMatches.add(scorer);
+                            }
+
+                            // Find and update assister
+                            if (assisterName) {
+                                const assister = players.find(p =>
+                                    p.name.toLowerCase().includes(assisterName.toLowerCase()) &&
+                                    p.team === match.home
+                                );
+                                if (assister) {
+                                    assister.assists++;
+                                    playersInMatches.add(assister);
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Process away team scorers
+                if (match.awayScorers) {
+                    match.awayScorers.forEach(scorerStr => {
+                        const match_result = scorerStr.match(/^([^(]+?)(?:\s*\(([^)]+)\))?$/);
+                        if (match_result) {
+                            const scorerName = match_result[1].trim();
+                            const assisterName = match_result[2] ? match_result[2].trim() : null;
+
+                            // Find and update scorer
+                            const scorer = players.find(p =>
+                                p.name.toLowerCase().includes(scorerName.toLowerCase()) &&
+                                p.team === match.away
+                            );
+                            if (scorer) {
+                                scorer.goals++;
+                                playersInMatches.add(scorer);
+                            }
+
+                            // Find and update assister
+                            if (assisterName) {
+                                const assister = players.find(p =>
+                                    p.name.toLowerCase().includes(assisterName.toLowerCase()) &&
+                                    p.team === match.away
+                                );
+                                if (assister) {
+                                    assister.assists++;
+                                    playersInMatches.add(assister);
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Mark all players from both teams as having played
+                players.forEach(p => {
+                    if (p.team === match.home || p.team === match.away) {
+                        p.matches++;
+                    }
+                });
+            });
+
+            // Update team statistics from fixtures
+            teams.forEach(team => {
+                team.played = 0;
+                team.won = 0;
+                team.drawn = 0;
+                team.lost = 0;
+                team.gf = 0;
+                team.ga = 0;
+            });
+
+            fixtures.filter(f => f.status === "Finished").forEach(match => {
+                const homeTeam = teams.find(t => t.name === match.home);
+                const awayTeam = teams.find(t => t.name === match.away);
+
+                if (homeTeam && awayTeam) {
+                    homeTeam.played++;
+                    awayTeam.played++;
+                    homeTeam.gf += match.homeScore;
+                    homeTeam.ga += match.awayScore;
+                    awayTeam.gf += match.awayScore;
+                    awayTeam.ga += match.homeScore;
+
+                    if (match.homeScore > match.awayScore) {
+                        homeTeam.won++;
+                        awayTeam.lost++;
+                    } else if (match.homeScore < match.awayScore) {
+                        awayTeam.won++;
+                        homeTeam.lost++;
+                    } else {
+                        homeTeam.drawn++;
+                        awayTeam.drawn++;
+                    }
+                }
+            });
+        }
+
         // Initialize all sections
+        autoUpdatePlayerStats(); // Auto-calculate stats from fixtures
         renderStandings();
         renderFixtures();
         renderPlayers();
