@@ -693,17 +693,17 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-label">Golden Boot Leader</div>
-                        <div class="stat-value" id="topScorer">-</div>
-                        <div class="stat-label" id="topScorerGoals">0 goals</div>
+                        <div class="stat-value" id="topScorer">Anas</div>
+                        <div class="stat-label" id="topScorerGoals">4 goals</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-label">Most Assists</div>
-                        <div class="stat-value" id="topAssist">-</div>
-                        <div class="stat-label" id="topAssistCount">0 assists</div>
+                        <div class="stat-value" id="topAssist">Ramshad</div>
+                        <div class="stat-label" id="topAssistCount">2 assists</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-label">Total Goals</div>
-                        <div class="stat-value" id="totalGoals">0</div>
+                        <div class="stat-value" id="totalGoals">15</div>
                         <div class="stat-label">In Tournament</div>
                     </div>
                 </div>
@@ -771,7 +771,10 @@
             {
                 id: 7, round: 3, home: "Vitoria FC", away: "Zah Shooters FC", homeScore: 0, awayScore: 0, status: "Finished", time: "23:30"
             },
-            { id: 8, round: 3, home: "FC Hooligans", away: "FC Dollers", homeScore: null, awayScore: null, status: "Upcoming", time: "23:45" },
+            {
+                id: 8, round: 3, home: "FC Hooligans", away: "FC Dollers", homeScore: 4, awayScore: 0, status: "Finished", time: "23:45",
+                homeScorers: ["Anas", "Anas (Ramshad)", "Anas (Zameel)", "Anas"]
+            },
             { id: 9, round: 3, home: "Khalifs FC", away: "Zamorin FC", homeScore: null, awayScore: null, status: "Upcoming", time: "00:00" },
 
             // Round 4
@@ -1051,15 +1054,30 @@
 
             document.getElementById('totalGoals').textContent = totalGoals;
 
-            const html = sorted.slice(0, 10).map((p, i) => `
+            let currentRank = 1;
+            const html = sorted.slice(0, 10).map((p, i) => {
+                // Determine rank (handle ties)
+                if (i > 0) {
+                    const prev = sorted[i - 1];
+                    if (p.goals < prev.goals || (p.goals === prev.goals && p.assists < prev.assists)) {
+                        currentRank = i + 1;
+                    }
+                }
+
+                let rankDisplay = `<span class="position">${currentRank}</span>`;
+                if (currentRank === 1) rankDisplay = '🥇 ' + currentRank;
+                if (currentRank === 2) rankDisplay = '🥈 ' + currentRank;
+                if (currentRank === 3) rankDisplay = '🥉 ' + currentRank;
+
+                return `
                 <tr>
-                    <td><span class="position">${i + 1}</span></td>
+                    <td>${rankDisplay}</td>
                     <td class="team-name">${p.name}</td>
                     <td>${p.team}</td>
                     <td class="goals">${p.goals}</td>
                     <td>${p.assists}</td>
                 </tr>
-            `).join('');
+            `}).join('');
             document.getElementById('scorersTable').innerHTML = html;
         }
 
