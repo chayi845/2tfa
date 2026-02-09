@@ -749,7 +749,10 @@
                 id: 2, round: 1, home: "FC Hooligans", away: "Khalifs FC", homeScore: 0, awayScore: 1, status: "Finished", time: "22:15",
                 awayScorers: ["Dawood"]
             },
-            { id: 3, round: 1, home: "FC Dollers", away: "Zah Shooters FC", homeScore: null, awayScore: null, status: "Upcoming", time: "22:30" },
+            {
+                id: 3, round: 1, home: "FC Dollers", away: "Zah Shooters FC", homeScore: 1, awayScore: 0, status: "Finished", time: "22:30",
+                homeScorers: ["Thameem (Baqir)"]
+            },
 
             // Round 2
             { id: 4, round: 2, home: "Vitoria FC", away: "FC Hooligans", homeScore: null, awayScore: null, status: "Upcoming", time: "22:45" },
@@ -868,7 +871,7 @@
                     <div class="match-date">${match.time} <span class="match-status upcoming">${match.status}</span></div>
                     <div class="match-teams">
                         <div class="team-home">
-                            <img src="${homeTeam ?   homeTeam.logo : 'logo.jpg'}" class="team-logo-medium">
+                            <img src="${homeTeam ? homeTeam.logo : 'logo.jpg'}" class="team-logo-medium">
                             <div>${match.home}</div>
                         </div>
                         <div class="match-score-container"><span class="vs">vs</span></div>
