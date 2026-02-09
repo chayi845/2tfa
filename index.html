@@ -732,15 +732,15 @@
         const teams = [
             { name: "FC Dollers", logo: "logo_fcdollers.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
             { name: "FC Hooligans", logo: "logo_fchooligans.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
-            { name: "Zamorin FC", logo: "logo_zamorinfc.jpeg", played: 1, won: 1, drawn: 0, lost: 0, gf: 3, ga: 1 },
-            { name: "Vitoria", logo: "logo_vitoria.jpeg", played: 1, won: 0, drawn: 0, lost: 1, gf: 1, ga: 3 },
+            { name: "Zamorin FC", logo: "logo_zamorinfc.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
+            { name: "Vitoria", logo: "logo_vitoria.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
             { name: "Zah Shooters FC", logo: "logo_zahshooters.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 },
             { name: "Khalifs FC", logo: "logo_khalifs.jpeg", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0 }
         ];
 
         const fixtures = [
             // Round 1
-            { id: 1, round: 1, home: "Zamorin FC", away: "Vitoria", homeScore: 3, awayScore: 1, status: "Finished", time: "22:00", scorers: ["Sinan (Icon) 2'", "Mubashir (C) 15'", "Sinan (Icon) 28'", "Sabith (Icon) 35'"] },
+            { id: 1, round: 1, home: "Zamorin FC", away: "Vitoria", homeScore: null, awayScore: null, status: "Upcoming", time: "22:00" },
             { id: 2, round: 1, home: "FC Hooligans", away: "Khalifs FC", homeScore: null, awayScore: null, status: "Upcoming", time: "22:15" },
             { id: 3, round: 1, home: "FC Dollers", away: "Zah Shooters FC", homeScore: null, awayScore: null, status: "Upcoming", time: "22:30" },
 
@@ -783,20 +783,20 @@
             { name: "Abdu (GK)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "logo_fchooligans.jpeg" },
 
             // Zamorin FC
-            { name: "Mubashir (C)", team: "Zamorin FC", goals: 1, assists: 1, yellow: 0, red: 0, matches: 1, img: "mubashir.jpeg" },
-            { name: "Sinan (Icon)", team: "Zamorin FC", goals: 2, assists: 0, yellow: 0, red: 0, matches: 1, img: "sinan.jpeg" },
-            { name: "Ak", team: "Zamorin FC", goals: 0, assists: 1, yellow: 0, red: 0, matches: 1, img: "AK.jpeg" },
-            { name: "Ruwais", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "logo_zamorinfc.jpeg" },
-            { name: "Riyan", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "riyan.jpeg" },
-            { name: "Waseem (GK)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Waseem.jpeg" },
+            { name: "Mubashir (C)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "mubashir.jpeg" },
+            { name: "Sinan (Icon)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "sinan.jpeg" },
+            { name: "Ak", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "AK.jpeg" },
+            { name: "Ruwais", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "logo_zamorinfc.jpeg" },
+            { name: "Riyan", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "riyan.jpeg" },
+            { name: "Waseem (GK)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Waseem.jpeg" },
 
             // Vitoria
-            { name: "Muhammed (C)", team: "Vitoria", goals: 0, assists: 1, yellow: 0, red: 0, matches: 1, img: "Muhammed.jpg" },
-            { name: "Sabith (Icon)", team: "Vitoria", goals: 1, assists: 0, yellow: 0, red: 0, matches: 1, img: "Sabith.jpg" },
-            { name: "Hamdullah", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "hamdullah.jpg" },
-            { name: "Nasif", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "nasif.jpg" },
-            { name: "Munazir", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Munazir.jpg" },
-            { name: "Adil (GK)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 1, img: "Adil.jpg" },
+            { name: "Muhammed (C)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Muhammed.jpg" },
+            { name: "Sabith (Icon)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Sabith.jpg" },
+            { name: "Hamdullah", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "hamdullah.jpg" },
+            { name: "Nasif", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "nasif.jpg" },
+            { name: "Munazir", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Munazir.jpg" },
+            { name: "Adil (GK)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Adil.jpg" },
 
             // Zah Shooters FC
             { name: "Manal (C)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Manal.jpg" },
@@ -878,15 +878,6 @@
             const resultsHtml = fixtures.filter(m => m.status === "Finished").map(match => {
                 const homeTeam = teams.find(t => t.name === match.home);
                 const awayTeam = teams.find(t => t.name === match.away);
-
-                let scorersHtml = '';
-                if (match.scorers && match.scorers.length > 0) {
-                    scorersHtml = `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #e0e0e0; font-size: 0.85em; color: #555;">
-                        <strong>⚽ Goal Scorers:</strong><br>
-                        ${match.scorers.join(', ')}
-                    </div>`;
-                }
-
                 return `
                 <div class="match-card">
                     <div class="match-date">${match.time} <span class="match-status finished">${match.status}</span></div>
@@ -901,7 +892,6 @@
                             <div>${match.away}</div>
                         </div>
                     </div>
-                    ${scorersHtml}
                 </div>
                 `;
             }).join('');
@@ -1039,7 +1029,32 @@
             document.getElementById('scorersTable').innerHTML = html;
         }
 
+        // Player Details functions
+        function renderPlayerCards() {
+            const filter = document.getElementById('detailTeamFilter');
+            const teamFilterVal = filter ? filter.value : 'all';
 
+            // Populate filter if empty
+            // Populate filter - Removed dynamic population logic as options are now hardcoded
+            // if (filter && filter.options.length === 1) { ... }
+
+            let filteredPlayers = (teamFilterVal === 'all' ? players : players.filter(p => p.team === teamFilterVal));
+
+            const gridHtml = filteredPlayers.map(p => `
+                <div class="player-card">
+                    <div class="player-photo-container">
+                        <img src="${p.img ? p.img : 'logo.jpg'}" alt="${p.name}" class="player-photo" onerror="this.src='logo.jpg'">
+                    </div>
+                    <div class="player-info">
+                        <div class="player-card-name">${p.name}</div>
+                        <div class="player-card-team">${p.team}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            const grid = document.getElementById('playerDetailsGrid');
+            if (grid) grid.innerHTML = gridHtml;
+        }
 
         // Initialize all sections
         renderStandings();
@@ -1047,6 +1062,7 @@
         renderPlayers();
         switchStatMode('goals');
         renderTopScorers();
+        renderPlayerCards();
     </script>
 </body>
 
