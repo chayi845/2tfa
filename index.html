@@ -392,6 +392,194 @@
             background: #667eea;
             color: white;
         }
+
+        /* Countdown Timer Styles */
+        .countdown-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 20px;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+
+        .countdown-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Player Details Card Styles */
+        .player-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .player-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .player-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .player-photo-container {
+            width: 100%;
+            height: 220px;
+            position: relative;
+            background: #e0e0e0;
+            overflow: hidden;
+            border-bottom: 4px solid #667eea;
+        }
+
+        .player-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.5s ease;
+        }
+
+        .player-card:hover .player-photo {
+            transform: scale(1.08);
+        }
+
+        .player-info {
+            padding: 15px;
+            position: relative;
+        }
+
+        .player-team-logo {
+            position: absolute;
+            top: -25px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            padding: 3px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            object-fit: contain;
+        }
+
+        .player-role-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            font-size: 0.7em;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .role-c {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .role-gk {
+            background: #17a2b8;
+        }
+
+        .role-icon {
+            background: #6f42c1;
+        }
+
+        .player-card-name {
+            font-weight: 800;
+            color: #2d3748;
+            margin: 5px 0 2px;
+            font-size: 1.25em;
+        }
+
+        .player-card-team {
+            font-size: 0.85em;
+            color: #718096;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .player-card-stats {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .p-stat {
+            text-align: center;
+        }
+
+        .p-stat-val {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #333;
+            display: block;
+        }
+
+        .p-stat-lbl {
+            font-size: 0.7em;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .countdown-item {
+                min-width: 60px;
+                padding: 10px 15px;
+            }
+
+            .countdown-value {
+                font-size: 2em;
+            }
+
+            .countdown-label {
+                font-size: 0.75em;
+            }
+        }
     </style>
 </head>
 
@@ -407,6 +595,7 @@
             <button class="tab" onclick="showSection('fixtures')">Fixtures</button>
             <button class="tab" onclick="showSection('players')">Player Stats</button>
             <button class="tab" onclick="showSection('topscorers')">Top Scorers</button>
+            <button class="tab" onclick="showSection('playerdetails')">Player Details</button>
         </div>
 
         <div class="content">
@@ -521,6 +710,26 @@
                     </table>
                 </div>
             </div>
+
+            <!-- Player Details Section -->
+            <div id="playerdetails" class="section">
+                <h2>All Players</h2>
+                <div class="team-filter">
+                    <label>Filter by Team: </label>
+                    <select id="detailTeamFilter" onchange="renderPlayerCards()">
+                        <option value="all">All Teams</option>
+                        <option value="FC Dollers">FC Dollers</option>
+                        <option value="FC Hooligans">FC Hooligans</option>
+                        <option value="Zamorin FC">Zamorin FC</option>
+                        <option value="Vitoria">Vitoria</option>
+                        <option value="Zah Shooters FC">Zah Shooters FC</option>
+                        <option value="Khalifs FC">Khalifs FC</option>
+                    </select>
+                </div>
+                <div class="player-details-grid" id="playerDetailsGrid">
+                    <!-- Cards will be populated here -->
+                </div>
+            </div>
         </div>
     </div>
 
@@ -564,52 +773,52 @@
 
         const players = [
             // FC Dollers
-            { name: "Baqir (C)", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Shammas (Icon)", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Muhammed Cs", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Adnan", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Tameem", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Rijas (GK)", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
+            { name: "Baqir (C)", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Baqir.jpg" },
+            { name: "Shammas (Icon)", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Shammas.jpg" },
+            { name: "Muhammed Cs", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Muhammed Cs.jpg" },
+            { name: "Adnan", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Adnan.jpg" },
+            { name: "Thameem", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "thameem.jpg" },
+            { name: "Rijas (GK)", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Rijas.jpg" },
 
             // FC Hooligans
-            { name: "Fathah (C)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Ramshad (Icon)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Anas", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Thansi", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Zameel", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Abdu (GK)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
+            { name: "Fathah (C)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "fathah.jpg" },
+            { name: "Ramshad (Icon)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "ramshad.jpg" },
+            { name: "Anas", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "anas.jpg" },
+            { name: "Thansi", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "thanseeh.jpg" },
+            { name: "Zameel", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "zameel.jpg" },
+            { name: "Abdu (GK)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "logo_fchooligans.jpeg" },
 
             // Zamorin FC
-            { name: "Mubashir (C)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Sinan (Icon)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Ak", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Ruwais", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Riyan", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Waseem (GK)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
+            { name: "Mubashir (C)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "mubashir.jpeg" },
+            { name: "Sinan (Icon)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "sinan.jpeg" },
+            { name: "Ak", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "AK.jpeg" },
+            { name: "Ruwais", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "logo_zamorinfc.jpeg" },
+            { name: "Riyan", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "riyan.jpeg" },
+            { name: "Waseem (GK)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Waseem.jpeg" },
 
             // Vitoria
-            { name: "Muhammed (C)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Sabith (Icon)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Hamdulla", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Nasif", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Munazir", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Adil (GK)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
+            { name: "Muhammed (C)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Muhammed.jpg" },
+            { name: "Sabith (Icon)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Sabith.jpg" },
+            { name: "Hamdullah", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "hamdullah.jpg" },
+            { name: "Nasif", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "nasif.jpg" },
+            { name: "Munazir", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Munazir.jpg" },
+            { name: "Adil (GK)", team: "Vitoria", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Adil.jpg" },
 
             // Zah Shooters FC
-            { name: "Manal (C)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Shain (Icon)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Fahman", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Mahin", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Nafih ba", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Razi tm (GK)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
+            { name: "Manal (C)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Manal.jpg" },
+            { name: "Shaheen (Icon)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "shaheen.jpg" },
+            { name: "Fahman", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Fahman.jpg" },
+            { name: "Mahin", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Mahin.jpg" },
+            { name: "Nafih ba", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "nafih ba.jpg" },
+            { name: "Razi (GK)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Razi TM.jpg" },
 
             // Khalifs FC
-            { name: "Fahiz (C)", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Afil (Icon)", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Majid", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Dawood", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Shadil", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 },
-            { name: "Sa'ad (GK)", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0 }
+            { name: "Fahiz (C)", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Fahiz.jpg" },
+            { name: "Afil (Icon)", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Afil.jpg" },
+            { name: "Majid", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Majid.jpg" },
+            { name: "Dawood", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Dawood.jpg" },
+            { name: "Shadil", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Shadil.jpg" },
+            { name: "Saad (GK)", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Sa'ad.jpg" }
         ];
 
         // Tab switching function
@@ -823,12 +1032,40 @@
             document.getElementById('scorersTable').innerHTML = html;
         }
 
+        // Player Details functions
+        function renderPlayerCards() {
+            const filter = document.getElementById('detailTeamFilter');
+            const teamFilterVal = filter ? filter.value : 'all';
+
+            // Populate filter if empty
+            // Populate filter - Removed dynamic population logic as options are now hardcoded
+            // if (filter && filter.options.length === 1) { ... }
+
+            let filteredPlayers = (teamFilterVal === 'all' ? players : players.filter(p => p.team === teamFilterVal));
+
+            const gridHtml = filteredPlayers.map(p => `
+                <div class="player-card">
+                    <div class="player-photo-container">
+                        <img src="${p.img ? p.img : 'logo.jpg'}" alt="${p.name}" class="player-photo" onerror="this.src='logo.jpg'">
+                    </div>
+                    <div class="player-info">
+                        <div class="player-card-name">${p.name}</div>
+                        <div class="player-card-team">${p.team}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            const grid = document.getElementById('playerDetailsGrid');
+            if (grid) grid.innerHTML = gridHtml;
+        }
+
         // Initialize all sections
         renderStandings();
         renderFixtures();
         renderPlayers();
         switchStatMode('goals');
         renderTopScorers();
+        renderPlayerCards();
     </script>
 </body>
 
