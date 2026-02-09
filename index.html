@@ -694,7 +694,7 @@
                     <div class="stat-card">
                         <div class="stat-label">Golden Boot Leader</div>
                         <div class="stat-value" id="topScorer">Anas</div>
-                        <div class="stat-label" id="topScorerGoals">5 goals</div>
+                        <div class="stat-label" id="topScorerGoals">7 goals</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-label">Most Assists</div>
@@ -703,7 +703,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-label">Total Goals</div>
-                        <div class="stat-value" id="totalGoals">27</div>
+                        <div class="stat-value" id="totalGoals">31</div>
                         <div class="stat-label">In Tournament</div>
                     </div>
                 </div>
@@ -809,7 +809,10 @@
             },
 
             // Semi-Finals
-            { id: 16, round: "Semi-Final", home: "FC Dollers", away: "FC Hooligans", homeScore: null, awayScore: null, status: "Upcoming", time: "TBD" },
+            {
+                id: 16, round: "Semi-Final", home: "FC Dollers", away: "FC Hooligans", homeScore: 0, awayScore: 4, status: "Finished", time: "TBD",
+                awayScorers: ["Anas (Thansi)", "Thansi (Anas)", "Anas", "Thansi"]
+            },
             { id: 17, round: "Semi-Final", home: "Khalifs FC", away: "Zamorin FC", homeScore: null, awayScore: null, status: "Upcoming", time: "TBD" },
 
             // Final
@@ -826,10 +829,10 @@
             { name: "Rijas (GK)", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Rijas.jpg" },
 
             // FC Hooligans
-            { name: "Fathah (C)", team: "FC Hooligans", goals: 1, assists: 0, yellow: 0, red: 0, matches: 0, img: "fathah.jpg" },
+            { name: "Fathah (C)", team: "FC Hooligans", goals: 1, assists: 0, yellow: 1, red: 0, matches: 0, img: "fathah.jpg" },
             { name: "Ramshad (Icon)", team: "FC Hooligans", goals: 1, assists: 2, yellow: 0, red: 0, matches: 0, img: "ramshad.jpg" },
-            { name: "Anas", team: "FC Hooligans", goals: 5, assists: 0, yellow: 0, red: 0, matches: 0, img: "anas.jpg" },
-            { name: "Thansi", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "thanseeh.jpg" },
+            { name: "Anas", team: "FC Hooligans", goals: 7, assists: 1, yellow: 0, red: 0, matches: 0, img: "anas.jpg" },
+            { name: "Thansi", team: "FC Hooligans", goals: 2, assists: 1, yellow: 0, red: 0, matches: 0, img: "thanseeh.jpg" },
             { name: "Zameel", team: "FC Hooligans", goals: 0, assists: 1, yellow: 0, red: 0, matches: 0, img: "zameel.jpg" },
             { name: "Abdu (GK)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "logo_fchooligans.jpeg" },
 
@@ -1273,4 +1276,3 @@
 </body>
 
 </html>
-
