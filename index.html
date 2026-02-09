@@ -703,7 +703,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-label">Total Goals</div>
-                        <div class="stat-value" id="totalGoals">23</div>
+                        <div class="stat-value" id="totalGoals">25</div>
                         <div class="stat-label">In Tournament</div>
                     </div>
                 </div>
@@ -798,56 +798,59 @@
             {
                 id: 13, round: 5, home: "Zah Shooters FC", away: "Khalifs FC", homeScore: 0, awayScore: 0, status: "Finished", time: "01:00"
             },
-            { id: 14, round: 5, home: "FC Hooligans", away: "Zamorin FC", homeScore: null, awayScore: null, status: "Upcoming", time: "01:15" },
+            {
+                id: 14, round: 5, home: "FC Hooligans", away: "Zamorin FC", homeScore: 0, awayScore: 2, status: "Finished", time: "01:15",
+                awayScorers: ["Mubashir (Riyan)", "Sinan (Riyan)"]
+            },
             { id: 15, round: 5, home: "FC Dollers", away: "Vitoria FC", homeScore: null, awayScore: null, status: "Upcoming", time: "01:30" }
         ];
 
         const players = [
             // FC Dollers
             { name: "Baqir (C)", team: "FC Dollers", goals: 1, assists: 3, yellow: 1, red: 0, matches: 0, img: "Baqir.jpg" },
-            { name: "Shammas (Icon)", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Shammas.jpg" },
+            { name: "Shammas (Icon)", team: "FC Dollers", goals: 3, assists: 0, yellow: 0, red: 0, matches: 0, img: "Shammas.jpg" },
             { name: "Muhammed Cs", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Muhammed Cs.jpg" },
             { name: "Adnan", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Adnan.jpg" },
-            { name: "Thameem", team: "FC Dollers", goals: 0, assists: 1, yellow: 0, red: 0, matches: 0, img: "thameem.jpg" },
+            { name: "Thameem", team: "FC Dollers", goals: 1, assists: 1, yellow: 0, red: 0, matches: 0, img: "thameem.jpg" },
             { name: "Rijas (GK)", team: "FC Dollers", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Rijas.jpg" },
 
             // FC Hooligans
-            { name: "Fathah (C)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "fathah.jpg" },
-            { name: "Ramshad (Icon)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "ramshad.jpg" },
-            { name: "Anas", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "anas.jpg" },
+            { name: "Fathah (C)", team: "FC Hooligans", goals: 1, assists: 0, yellow: 0, red: 0, matches: 0, img: "fathah.jpg" },
+            { name: "Ramshad (Icon)", team: "FC Hooligans", goals: 1, assists: 2, yellow: 0, red: 0, matches: 0, img: "ramshad.jpg" },
+            { name: "Anas", team: "FC Hooligans", goals: 5, assists: 0, yellow: 0, red: 0, matches: 0, img: "anas.jpg" },
             { name: "Thansi", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "thanseeh.jpg" },
-            { name: "Zameel", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "zameel.jpg" },
+            { name: "Zameel", team: "FC Hooligans", goals: 0, assists: 1, yellow: 0, red: 0, matches: 0, img: "zameel.jpg" },
             { name: "Abdu (GK)", team: "FC Hooligans", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "logo_fchooligans.jpeg" },
 
             // Zamorin FC
-            { name: "Mubashir (C)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "mubashir.jpeg" },
-            { name: "Sinan (Icon)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "sinan.jpeg" },
-            { name: "Ak", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "AK.jpeg" },
+            { name: "Mubashir (C)", team: "Zamorin FC", goals: 1, assists: 0, yellow: 0, red: 0, matches: 0, img: "mubashir.jpeg" },
+            { name: "Sinan (Icon)", team: "Zamorin FC", goals: 3, assists: 2, yellow: 0, red: 0, matches: 0, img: "sinan.jpeg" },
+            { name: "Ak", team: "Zamorin FC", goals: 0, assists: 1, yellow: 0, red: 0, matches: 0, img: "AK.jpeg" },
             { name: "Ruwais", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "ruwais.jpeg" },
-            { name: "Riyan", team: "Zamorin FC", goals: 0, assists: 1, yellow: 0, red: 0, matches: 0, img: "riyan.jpeg" },
+            { name: "Riyan", team: "Zamorin FC", goals: 1, assists: 1, yellow: 0, red: 0, matches: 0, img: "riyan.jpeg" },
             { name: "Waseem (GK)", team: "Zamorin FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Waseem.jpeg" },
 
             // Vitoria FC
-            { name: "Muhammed (C)", team: "Vitoria FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Muhammed.jpg" },
-            { name: "Sabith (Icon)", team: "Vitoria FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Sabith.jpg" },
+            { name: "Muhammed (C)", team: "Vitoria FC", goals: 1, assists: 1, yellow: 0, red: 0, matches: 0, img: "Muhammed.jpg" },
+            { name: "Sabith (Icon)", team: "Vitoria FC", goals: 2, assists: 1, yellow: 0, red: 0, matches: 0, img: "Sabith.jpg" },
             { name: "Hamdullah", team: "Vitoria FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "hamdullah.jpg" },
             { name: "Nasif", team: "Vitoria FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "nasif.jpg" },
-            { name: "Munazir", team: "Vitoria FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Munazir.jpg" },
+            { name: "Munazir", team: "Vitoria FC", goals: 1, assists: 1, yellow: 0, red: 0, matches: 0, img: "Munazir.jpg" },
             { name: "Adil (GK)", team: "Vitoria FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Adil.jpg" },
 
             // Zah Shooters FC
             { name: "Manal (C)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Manal.jpg" },
-            { name: "Shaheen (Icon)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "shaheen.jpg" },
+            { name: "Shaheen (Icon)", team: "Zah Shooters FC", goals: 1, assists: 0, yellow: 0, red: 0, matches: 0, img: "shaheen.jpg" },
             { name: "Fahman", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Fahman.jpg" },
             { name: "Mahin", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Mahin.jpg" },
-            { name: "Nafih ba", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "nafih ba.jpg" },
+            { name: "Nafih ba", team: "Zah Shooters FC", goals: 0, assists: 1, yellow: 0, red: 0, matches: 0, img: "nafih ba.jpg" },
             { name: "Razi (GK)", team: "Zah Shooters FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Razi TM.jpg" },
 
             // Khalifs FC
             { name: "Fahiz (C)", team: "Khalifs FC", goals: 0, assists: 1, yellow: 0, red: 0, matches: 0, img: "Fahiz.jpg" },
             { name: "Afil (Icon)", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Afil.jpg" },
-            { name: "Majid", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Majid.jpg" },
-            { name: "Dawood", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Dawood.jpg" },
+            { name: "Majid", team: "Khalifs FC", goals: 1, assists: 0, yellow: 0, red: 0, matches: 0, img: "Majid.jpg" },
+            { name: "Dawood", team: "Khalifs FC", goals: 1, assists: 0, yellow: 0, red: 0, matches: 0, img: "Dawood.jpg" },
             { name: "Shadil", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Shadil.jpg" },
             { name: "Sa'ad (GK)", team: "Khalifs FC", goals: 0, assists: 0, yellow: 0, red: 0, matches: 0, img: "Sa_ad.jpg" }
         ];
